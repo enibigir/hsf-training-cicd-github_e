@@ -21,9 +21,11 @@ jobs:
       - name: Commit common episodes
         uses: EndBug/add-and-commit@v5
         with:
-          message: "Add the very useful text file"
+          message: "Add common episodes"
           add: "*.md --force"
           cwd: "./_episodes/"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build
         run: |
